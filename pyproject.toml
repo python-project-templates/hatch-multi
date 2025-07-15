@@ -27,6 +27,7 @@ classifiers = [
 
 dependencies = [
     "hatchling",
+    "pydantic",
 ]
 
 [project.entry-points.hatch]
