@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling", "hatch-multi"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hatch-cpp-test-project-basic"
+description = "Basic test project for hatch-cpp"
+version = "0.1.0"
+requires-python = ">=3.9"
+dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+main = ["superstore"]
+other = ["organizeit2"]
+
+[tool.hatch.build.sources]
+src = "/"
+
+[tool.hatch.build.targets.sdist]
+packages = ["project"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["project"]
+
+[tool.hatch.metadata.hooks.hatch-multi]
+primary = "main"
