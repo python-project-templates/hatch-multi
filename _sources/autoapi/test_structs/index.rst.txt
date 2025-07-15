@@ -1,0 +1,22 @@
+test_structs
+============
+
+.. py:module:: test_structs
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   test_structs.TestStructs
+
+
+Module Contents
+---------------
+
+.. py:class:: TestStructs
+
+   .. py:method:: test_config()
+
+

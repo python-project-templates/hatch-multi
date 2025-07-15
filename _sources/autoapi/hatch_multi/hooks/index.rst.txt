@@ -1,0 +1,19 @@
+hatch_multi.hooks
+=================
+
+.. py:module:: hatch_multi.hooks
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   hatch_multi.hooks.hatch_register_metadata_hook
+
+
+Module Contents
+---------------
+
+.. py:function:: hatch_register_metadata_hook() -> Type[hatch_multi.plugin.HatchMultiMetadataHook]
+

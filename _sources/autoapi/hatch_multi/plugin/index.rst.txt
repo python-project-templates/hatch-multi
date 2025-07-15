@@ -1,0 +1,41 @@
+hatch_multi.plugin
+==================
+
+.. py:module:: hatch_multi.plugin
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   hatch_multi.plugin.HatchMultiMetadataHook
+
+
+Module Contents
+---------------
+
+.. py:class:: HatchMultiMetadataHook(root: str, config: dict)
+
+   Bases: :py:obj:`hatchling.metadata.plugin.interface.MetadataHookInterface`
+
+
+   The hatch-multi build hook.
+
+
+   .. py:attribute:: PLUGIN_NAME
+      :value: 'hatch-multi'
+
+
+      The name used for selection.
+
+
+   .. py:attribute:: _logger
+
+
+   .. py:method:: update(metadata: dict) -> None
+
+      This updates the metadata mapping of the `project` table in-place.
+
+
+

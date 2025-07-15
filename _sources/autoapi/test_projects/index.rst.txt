@@ -1,0 +1,22 @@
+test_projects
+=============
+
+.. py:module:: test_projects
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   test_projects.TestProject
+
+
+Module Contents
+---------------
+
+.. py:class:: TestProject
+
+   .. py:method:: test_basic(project)
+
+
