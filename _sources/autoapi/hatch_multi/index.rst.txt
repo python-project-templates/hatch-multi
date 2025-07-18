@@ -44,7 +44,7 @@ Package Contents
 ----------------
 
 .. py:data:: __version__
-   :value: '0.1.1'
+   :value: '1.0.0'
 
 
 .. py:function:: hatch_register_metadata_hook() -> Type[hatch_multi.plugin.HatchMultiMetadataHook]
