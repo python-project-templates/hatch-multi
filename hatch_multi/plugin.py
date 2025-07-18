@@ -36,7 +36,10 @@ class HatchMultiMetadataHook(MetadataHookInterface):
             metadata["name"] = config.name
             if config.primary:
                 self._logger.info(f"Setting metadata for primary dependency set '{config.primary}' in hatch-multi")
-                metadata["dependencies"] = metadata["optional-dependencies"].get(config.primary, [])
+                if isinstance(config.primary, list):
+                    metadata["dependencies"] = [dep for extra in config.primary for dep in metadata["optional-dependencies"].get(extra, [])]
+                else:
+                    metadata["dependencies"] = metadata["optional-dependencies"].get(config.primary, [])
             else:
                 self._logger.info("Setting metadata for default dependency set in hatch-multi")
                 # If no primary is set, use the first extra as default
