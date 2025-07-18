@@ -9,6 +9,7 @@ This page contains auto-generated API reference documentation [#f1]_.
    /autoapi/project/index
    /autoapi/hatch_multi/index
    /autoapi/test_structs/index
-   /autoapi/test_projects/index
+   /autoapi/test_projects_basic/index
+   /autoapi/test_projects_multiple_primary/index
 
 .. [#f1] Created with `sphinx-autoapi <https://github.com/readthedocs/sphinx-autoapi>`_

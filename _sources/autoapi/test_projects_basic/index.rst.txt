@@ -1,0 +1,19 @@
+test_projects_basic
+===================
+
+.. py:module:: test_projects_basic
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   test_projects_basic.test_basic
+
+
+Module Contents
+---------------
+
+.. py:function:: test_basic()
+
