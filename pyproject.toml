@@ -8,7 +8,7 @@ authors = [{name = "the hatch-multi authors", email = "t.paine154@gmail.com"}]
 description = "Create multiple discrete packages from optional-dependencies (extras)"
 readme = "README.md"
 license = { text = "Apache-2.0" }
-version = "0.1.1"
+version = "1.0.0"
 requires-python = ">=3.9"
 keywords = []
 
@@ -54,7 +54,7 @@ Repository = "https://github.com/python-project-templates/hatch-multi"
 Homepage = "https://github.com/python-project-templates/hatch-multi"
 
 [tool.bumpversion]
-current_version = "0.1.1"
+current_version = "1.0.0"
 commit = true
 tag = true
 

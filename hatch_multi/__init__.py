@@ -1,4 +1,4 @@
-__version__ = "0.1.1"
+__version__ = "1.0.0"
 
 from .hooks import hatch_register_metadata_hook
 from .plugin import HatchMultiMetadataHook
