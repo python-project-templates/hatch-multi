@@ -46,7 +46,5 @@ HATCH_MULTI_BUILD=other python -m build
 # Produces my-project-other wheel and sdist, with dependencies from [project.optional-dependencies.other]
 ```
 
-
-
 > [!NOTE]
 > This library was generated using [copier](https://copier.readthedocs.io/en/stable/) from the [Base Python Project Template repository](https://github.com/python-project-templates/base).
