@@ -9,7 +9,6 @@ Create multiple discrete packages from optional-dependencies (extras)
 
 ## Overview
 
-<<<<<<< before updating
 A small [hatch plugin](https://hatch.pypa.io/latest/) to create multiple discrete packages from a single package, via `optional-dependencies`.
 
 **pyproject.toml**
@@ -36,9 +35,5 @@ HATCH_MULTI_BUILD=other python -m build
 # Produces my-project-other wheel and sdist, with dependencies from [project.optional-dependencies.other]
 ```
 
-
-
-=======
->>>>>>> after updating
 > [!NOTE]
 > This library was generated using [copier](https://copier.readthedocs.io/en/stable/) from the [Base Python Project Template repository](https://github.com/python-project-templates/base).
