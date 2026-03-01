@@ -141,14 +141,12 @@ js/node_modules
 js/test-results
 js/playwright-report
 js/*.tgz
-hatch_multi/extension
 
 # Jupyter
 .ipynb_checkpoints
 .autoversion
 Untitled*.ipynb
-!hatch_multi/extension/hatch_multi.json
-!hatch_multi/extension/install.json
+hatch_multi/extension
 hatch_multi/nbextension
 hatch_multi/labextension
 
@@ -157,3 +155,7 @@ hatch_multi/labextension
 
 # Rust
 target
+
+# Hydra
+outputs/
+multirun/
