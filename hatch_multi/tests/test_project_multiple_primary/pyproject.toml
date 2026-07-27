@@ -24,3 +24,5 @@ packages = ["project"]
 
 [tool.hatch.metadata.hooks.hatch-multi]
 default = ["main", "other"]
+
+[tool.hatch.build.targets.sdist.hooks.hatch-multi]

@@ -23,8 +23,11 @@ dynamic = ["dependencies"]
 main = [...]
 other = [...]
 
-[tool.hatch.metadata.hooks.multi]
+[tool.hatch.metadata.hooks.hatch-multi]
 primary = "main"
+
+# Required for split sdists to retain their package name when installed.
+[tool.hatch.build.targets.sdist.hooks.hatch-multi]
 ```
 
 ```bash
