@@ -117,7 +117,7 @@ Module Contents
 
 
    .. py:attribute:: primary
-      :type:  Optional[Union[str, List[str]]]
+      :type:  str | list[str] | None
       :value: None
 
 

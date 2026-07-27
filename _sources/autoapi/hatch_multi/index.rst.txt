@@ -47,7 +47,7 @@ Package Contents
    :value: '1.0.0'
 
 
-.. py:function:: hatch_register_metadata_hook() -> Type[hatch_multi.plugin.HatchMultiMetadataHook]
+.. py:function:: hatch_register_metadata_hook() -> type[hatch_multi.plugin.HatchMultiMetadataHook]
 
 .. py:class:: HatchMultiMetadataHook(root: str, config: dict)
 
@@ -175,7 +175,7 @@ Package Contents
 
 
    .. py:attribute:: primary
-      :type:  Optional[Union[str, List[str]]]
+      :type:  str | list[str] | None
       :value: None
 
 

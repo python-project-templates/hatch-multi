@@ -15,5 +15,5 @@ Functions
 Module Contents
 ---------------
 
-.. py:function:: hatch_register_metadata_hook() -> Type[hatch_multi.plugin.HatchMultiMetadataHook]
+.. py:function:: hatch_register_metadata_hook() -> type[hatch_multi.plugin.HatchMultiMetadataHook]
 
