@@ -270,8 +270,11 @@
 <span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="err">...]</span>
 <span class="n">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="err">...]</span>
 
-<span class="k">[tool.hatch.metadata.hooks.multi]</span>
+<span class="k">[tool.hatch.metadata.hooks.hatch-multi]</span>
 <span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;main&quot;</span>
+
+<span class="c1"># Required for split sdists to retain their package name when installed.</span>
+<span class="k">[tool.hatch.build.targets.sdist.hooks.hatch-multi]</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>build

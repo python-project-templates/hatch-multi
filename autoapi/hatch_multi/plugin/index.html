@@ -255,8 +255,11 @@
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#hatch_multi.plugin.HatchMultiMetadataHook" title="hatch_multi.plugin.HatchMultiMetadataHook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HatchMultiMetadataHook</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#hatch_multi.plugin.HatchMultiBuildHook" title="hatch_multi.plugin.HatchMultiBuildHook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HatchMultiBuildHook</span></code></a></p></td>
 <td><p>The hatch-multi build hook.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#hatch_multi.plugin.HatchMultiMetadataHook" title="hatch_multi.plugin.HatchMultiMetadataHook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HatchMultiMetadataHook</span></code></a></p></td>
+<td><p>The hatch-multi metadata hook.</p></td>
 </tr>
 </tbody>
 </table>
@@ -265,10 +268,43 @@
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
 <dl class="py class">
+<dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiBuildHook">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hatch_multi.plugin.</span></span><span class="sig-name descname"><span class="pre">HatchMultiBuildHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">hatchling.builders.config.BuilderConfigBound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">hatchling.metadata.core.ProjectMetadata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">hatchling.bridge.app.Application</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/hatch_multi/plugin.html#HatchMultiBuildHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hatch_multi.plugin.HatchMultiBuildHook" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">hatchling.builders.hooks.plugin.interface.BuildHookInterface</span></code></p>
+<p>The hatch-multi build hook.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiBuildHook.PLUGIN_NAME">
+<span class="sig-name descname"><span class="pre">PLUGIN_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hatch-multi'</span></em><a class="headerlink" href="#hatch_multi.plugin.HatchMultiBuildHook.PLUGIN_NAME" title="Link to this definition">¶</a></dt>
+<dd><p>The name used for selection.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiBuildHook._temporary_project_file">
+<span class="sig-name descname"><span class="pre">_temporary_project_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#hatch_multi.plugin.HatchMultiBuildHook._temporary_project_file" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiBuildHook.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/hatch_multi/plugin.html#HatchMultiBuildHook.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hatch_multi.plugin.HatchMultiBuildHook.initialize" title="Link to this definition">¶</a></dt>
+<dd><p>This occurs immediately before each build.</p>
+<p>Any modifications to the build data will be seen by the build target.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiBuildHook.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artifact_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../../_modules/hatch_multi/plugin.html#HatchMultiBuildHook.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hatch_multi.plugin.HatchMultiBuildHook.finalize" title="Link to this definition">¶</a></dt>
+<dd><p>This occurs immediately after each build and will not run if the <cite>–hooks-only</cite> flag
+was passed to the [<cite>build</cite>](../../cli/reference.md#hatch-build) command.</p>
+<p>The build data will reflect any modifications done by the target during the build.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiMetadataHook">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hatch_multi.plugin.</span></span><span class="sig-name descname"><span class="pre">HatchMultiMetadataHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/hatch_multi/plugin.html#HatchMultiMetadataHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hatch_multi.plugin.HatchMultiMetadataHook" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">hatchling.metadata.plugin.interface.MetadataHookInterface</span></code></p>
-<p>The hatch-multi build hook.</p>
+<p>The hatch-multi metadata hook.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="hatch_multi.plugin.HatchMultiMetadataHook.PLUGIN_NAME">
 <span class="sig-name descname"><span class="pre">PLUGIN_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hatch-multi'</span></em><a class="headerlink" href="#hatch_multi.plugin.HatchMultiMetadataHook.PLUGIN_NAME" title="Link to this definition">¶</a></dt>
@@ -349,6 +385,13 @@
 <li><a class="reference internal" href="#">hatch_multi.plugin</a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
 <li><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiBuildHook"><code class="docutils literal notranslate"><span class="pre">HatchMultiBuildHook</span></code></a><ul>
+<li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiBuildHook.PLUGIN_NAME"><code class="docutils literal notranslate"><span class="pre">HatchMultiBuildHook.PLUGIN_NAME</span></code></a></li>
+<li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiBuildHook._temporary_project_file"><code class="docutils literal notranslate"><span class="pre">HatchMultiBuildHook._temporary_project_file</span></code></a></li>
+<li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiBuildHook.initialize"><code class="docutils literal notranslate"><span class="pre">HatchMultiBuildHook.initialize()</span></code></a></li>
+<li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiBuildHook.finalize"><code class="docutils literal notranslate"><span class="pre">HatchMultiBuildHook.finalize()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiMetadataHook"><code class="docutils literal notranslate"><span class="pre">HatchMultiMetadataHook</span></code></a><ul>
 <li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiMetadataHook.PLUGIN_NAME"><code class="docutils literal notranslate"><span class="pre">HatchMultiMetadataHook.PLUGIN_NAME</span></code></a></li>
 <li><a class="reference internal" href="#hatch_multi.plugin.HatchMultiMetadataHook._logger"><code class="docutils literal notranslate"><span class="pre">HatchMultiMetadataHook._logger</span></code></a></li>

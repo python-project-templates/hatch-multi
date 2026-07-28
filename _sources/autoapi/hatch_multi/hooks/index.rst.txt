@@ -9,11 +9,14 @@ Functions
 
 .. autoapisummary::
 
+   hatch_multi.hooks.hatch_register_build_hook
    hatch_multi.hooks.hatch_register_metadata_hook
 
 
 Module Contents
 ---------------
+
+.. py:function:: hatch_register_build_hook() -> type[hatch_multi.plugin.HatchMultiBuildHook]
 
 .. py:function:: hatch_register_metadata_hook() -> type[hatch_multi.plugin.HatchMultiMetadataHook]
 

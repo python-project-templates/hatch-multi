@@ -10,10 +10,13 @@ Functions
 .. autoapisummary::
 
    test_projects_basic.test_basic
+   test_projects_basic.test_sdist_preserves_extra
 
 
 Module Contents
 ---------------
 
 .. py:function:: test_basic()
+
+.. py:function:: test_sdist_preserves_extra()
 

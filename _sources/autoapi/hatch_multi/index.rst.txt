@@ -28,6 +28,7 @@ Classes
 
 .. autoapisummary::
 
+   hatch_multi.HatchMultiBuildHook
    hatch_multi.HatchMultiMetadataHook
    hatch_multi.HatchMultiConfig
 
@@ -37,6 +38,7 @@ Functions
 
 .. autoapisummary::
 
+   hatch_multi.hatch_register_build_hook
    hatch_multi.hatch_register_metadata_hook
 
 
@@ -47,14 +49,54 @@ Package Contents
    :value: '1.0.0'
 
 
+.. py:function:: hatch_register_build_hook() -> type[hatch_multi.plugin.HatchMultiBuildHook]
+
 .. py:function:: hatch_register_metadata_hook() -> type[hatch_multi.plugin.HatchMultiMetadataHook]
+
+.. py:class:: HatchMultiBuildHook(root: str, config: dict[str, Any], build_config: hatchling.builders.config.BuilderConfigBound, metadata: hatchling.metadata.core.ProjectMetadata, directory: str, target_name: str, app: hatchling.bridge.app.Application | None = None)
+
+   Bases: :py:obj:`hatchling.builders.hooks.plugin.interface.BuildHookInterface`
+
+
+   The hatch-multi build hook.
+
+
+   .. py:attribute:: PLUGIN_NAME
+      :value: 'hatch-multi'
+
+
+      The name used for selection.
+
+
+   .. py:attribute:: _temporary_project_file
+      :type:  pathlib.Path | None
+      :value: None
+
+
+
+   .. py:method:: initialize(version: str, build_data: dict) -> None
+
+      This occurs immediately before each build.
+
+      Any modifications to the build data will be seen by the build target.
+
+
+
+   .. py:method:: finalize(version: str, build_data: dict, artifact_path: str) -> None
+
+      This occurs immediately after each build and will not run if the `--hooks-only` flag
+      was passed to the [`build`](../../cli/reference.md#hatch-build) command.
+
+      The build data will reflect any modifications done by the target during the build.
+
+
 
 .. py:class:: HatchMultiMetadataHook(root: str, config: dict)
 
    Bases: :py:obj:`hatchling.metadata.plugin.interface.MetadataHookInterface`
 
 
-   The hatch-multi build hook.
+   The hatch-multi metadata hook.
 
 
    .. py:attribute:: PLUGIN_NAME
