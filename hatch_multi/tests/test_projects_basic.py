@@ -3,6 +3,7 @@ from pathlib import Path
 from shutil import rmtree
 from subprocess import check_call
 from sys import executable
+from tarfile import TarFile
 from zipfile import ZipFile
 
 
@@ -105,3 +106,48 @@ Requires-Dist: superstore; extra == 'main'
 """
     )
     rmtree(f"hatch_multi/tests/{project}/dist")
+
+
+def test_sdist_preserves_extra():
+    project = "test_project_basic"
+    project_root = Path(f"hatch_multi/tests/{project}")
+    rmtree(project_root / "dist", ignore_errors=True)
+
+    check_call(
+        [
+            executable,
+            "-m",
+            "build",
+            "-n",
+            "-s",
+        ],
+        cwd=project_root,
+        env={"HATCH_MULTI_BUILD": "other"},
+    )
+
+    sdist_name = "hatch_cpp_test_project_basic_other-0.1.0.tar.gz"
+    assert listdir(project_root / "dist") == [sdist_name]
+    with TarFile.open(project_root / "dist" / sdist_name, "r:gz") as tar_file:
+        tar_file.extractall(project_root / "dist" / "extracted", filter="data")
+
+    source_root = project_root / "dist" / "extracted" / "hatch_cpp_test_project_basic_other-0.1.0"
+    check_call(
+        [
+            executable,
+            "-m",
+            "build",
+            "-n",
+            "-w",
+        ],
+        cwd=source_root,
+        env={},
+    )
+
+    wheel_name = "hatch_cpp_test_project_basic_other-0.1.0-py3-none-any.whl"
+    assert listdir(source_root / "dist") == [wheel_name]
+    with ZipFile(source_root / "dist" / wheel_name) as zip_file:
+        metadata = zip_file.read("hatch_cpp_test_project_basic_other-0.1.0.dist-info/METADATA").decode()
+
+    assert "Name: hatch-cpp-test-project-basic-other\n" in metadata
+    assert "Requires-Dist: organizeit2\n" in metadata
+    rmtree(project_root / "dist")

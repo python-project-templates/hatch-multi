@@ -1,6 +1,11 @@
 from hatchling.plugin import hookimpl
 
-from .plugin import HatchMultiMetadataHook
+from .plugin import HatchMultiBuildHook, HatchMultiMetadataHook
+
+
+@hookimpl
+def hatch_register_build_hook() -> type[HatchMultiBuildHook]:
+    return HatchMultiBuildHook
 
 
 @hookimpl
