@@ -262,16 +262,16 @@
 <p>A small <a class="reference external" href="https://hatch.pypa.io/latest/">hatch plugin</a> to create multiple discrete packages from a single package, via <code class="docutils literal notranslate"><span class="pre">optional-dependencies</span></code>.</p>
 <p><strong>pyproject.toml</strong></p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-project&quot;</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"my-project"</span>
 <span class="p">...</span>
-<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;dependencies&quot;</span><span class="p">]</span>
+<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"dependencies"</span><span class="p">]</span>
 
 <span class="k">[project.optional-dependencies]</span>
 <span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="err">...]</span>
 <span class="n">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="err">...]</span>
 
 <span class="k">[tool.hatch.metadata.hooks.hatch-multi]</span>
-<span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;main&quot;</span>
+<span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"main"</span>
 
 <span class="c1"># Required for split sdists to retain their package name when installed.</span>
 <span class="k">[tool.hatch.build.targets.sdist.hooks.hatch-multi]</span>

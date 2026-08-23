@@ -246,17 +246,17 @@
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">AliasChoices</span><span class="p">,</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;HatchMultiConfig&quot;</span><span class="p">,)</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"HatchMultiConfig"</span><span class="p">,)</span>
 
 
 <div class="viewcode-block" id="HatchMultiConfig">
 <a class="viewcode-back" href="../../autoapi/hatch_multi/structs/index.html#hatch_multi.HatchMultiConfig">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">HatchMultiConfig</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">validate_assignment</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of the package&quot;</span><span class="p">)</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"Name of the package"</span><span class="p">)</span>
     <span class="n">primary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
         <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Optional dependency set/s to use as primary&quot;</span><span class="p">,</span>
-        <span class="n">alias</span><span class="o">=</span><span class="n">AliasChoices</span><span class="p">(</span><span class="s2">&quot;primary&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">),</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">"Optional dependency set/s to use as primary"</span><span class="p">,</span>
+        <span class="n">alias</span><span class="o">=</span><span class="n">AliasChoices</span><span class="p">(</span><span class="s2">"primary"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">),</span>
     <span class="p">)</span></div>
 
 </pre></div>
