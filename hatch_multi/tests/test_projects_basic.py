@@ -32,7 +32,7 @@ def test_basic():
         zip_ref.extractall(f"hatch_multi/tests/{project}/dist/extracted")
     assert (
         Path(f"hatch_multi/tests/{project}/dist/extracted").joinpath("hatch_cpp_test_project_basic-0.1.0.dist-info/METADATA").read_text()
-        == """Metadata-Version: 2.4
+        == """Metadata-Version: 2.5
 Name: hatch-cpp-test-project-basic
 Version: 0.1.0
 Dynamic: Requires-Dist
@@ -63,7 +63,7 @@ Requires-Dist: organizeit2; extra == 'other'
         zip_ref.extractall(f"hatch_multi/tests/{project}/dist/extracted")
     assert (
         Path(f"hatch_multi/tests/{project}/dist/extracted").joinpath("hatch_cpp_test_project_basic-0.1.0.dist-info/METADATA").read_text()
-        == """Metadata-Version: 2.4
+        == """Metadata-Version: 2.5
 Name: hatch-cpp-test-project-basic
 Version: 0.1.0
 Summary: Basic test project for hatch-cpp
@@ -95,7 +95,7 @@ Requires-Dist: organizeit2; extra == 'other'
         zip_ref.extractall(f"hatch_multi/tests/{project}/dist/extracted")
     assert (
         Path(f"hatch_multi/tests/{project}/dist/extracted").joinpath("hatch_cpp_test_project_basic_other-0.1.0.dist-info/METADATA").read_text()
-        == """Metadata-Version: 2.4
+        == """Metadata-Version: 2.5
 Name: hatch-cpp-test-project-basic-other
 Version: 0.1.0
 Summary: Basic test project for hatch-cpp
