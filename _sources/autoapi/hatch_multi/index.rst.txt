@@ -53,7 +53,7 @@ Package Contents
 
 .. py:function:: hatch_register_metadata_hook() -> type[hatch_multi.plugin.HatchMultiMetadataHook]
 
-.. py:class:: HatchMultiBuildHook(root: str, config: dict[str, Any], build_config: hatchling.builders.config.BuilderConfigBound, metadata: hatchling.metadata.core.ProjectMetadata, directory: str, target_name: str, app: hatchling.bridge.app.Application | None = None)
+.. py:class:: HatchMultiBuildHook(root: str, config: dict[str, Any], build_config: hatchling.builders.config.BuilderConfigBound, metadata: hatchling.metadata.core.ProjectMetadata[hatchling.plugin.manager.PluginManagerBound], directory: str, target_name: str, app: hatchling.bridge.app.Application | None = None)
 
    Bases: :py:obj:`hatchling.builders.hooks.plugin.interface.BuildHookInterface`
 
