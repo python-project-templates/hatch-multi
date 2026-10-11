@@ -6,5 +6,5 @@ class TestStructs:
         config = HatchMultiConfig(name="test", primary="default")
         assert config.primary == "default"
 
-        config = HatchMultiConfig(name="test", default="default")
+        config = HatchMultiConfig.model_validate({"name": "test", "default": "default"})
         assert config.primary == "default"

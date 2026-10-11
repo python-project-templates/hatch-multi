@@ -10,5 +10,5 @@ class HatchMultiConfig(BaseModel, validate_assignment=True):
     primary: str | list[str] | None = Field(
         default=None,
         description="Optional dependency set/s to use as primary",
-        alias=AliasChoices("primary", "default"),
+        validation_alias=AliasChoices("primary", "default"),
     )

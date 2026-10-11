@@ -44,6 +44,7 @@ develop = [
     "codespell",
     "hatchling",
     "mdformat",
+    "mdformat-frontmatter",
     "mdformat-tables>=1",
     "pytest",
     "pytest-cov",
@@ -78,7 +79,7 @@ replace = 'version = "{new_version}"'
 
 [tool.coverage.run]
 omit = [
-    "hatch_multi/tests/integration/",
+    "hatch_multi/tests/integration/*",
 ]
 
 [tool.coverage.report]
