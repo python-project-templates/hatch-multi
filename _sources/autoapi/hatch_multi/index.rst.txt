@@ -212,13 +212,9 @@ Package Contents
 
    .. py:attribute:: name
       :type:  str
-      :value: None
-
 
 
    .. py:attribute:: primary
       :type:  str | list[str] | None
-      :value: None
-
 
 
